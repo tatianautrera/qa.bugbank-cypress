@@ -13,7 +13,7 @@ class RegisterUserPage{
     }
 
     assertRegisterUserSucess(){
-        cy.get(el.messageSuccess).should('contain','criada com sucesso')
+        cy.get(el.messageSuccess).should('contain','criada com sucessoo')
     }
 
 }
