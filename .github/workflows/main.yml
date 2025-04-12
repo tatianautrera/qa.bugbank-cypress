@@ -25,7 +25,7 @@ jobs:
           yarn clean:reports
 
       - name: Run Cypress with Mochawesome
-        run: npx cypress run --reporter mochawesome
+        run: yarn cypress run --reporter mochawesome
 
       - name: Merge Mochawesome JSON Reports
         run: yarn combine-reports
