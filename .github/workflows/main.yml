@@ -14,6 +14,12 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           build: yarn dev
-          start: yarn cypress run
+          start: yarn cypress run --reporter mochawesome
           browser: chrome
+      - name: Upload Mochawesome Report
+        if: always() # Garante que o report será enviado mesmo se os testes falharem
+        uses: actions/upload-artifact@v4
+        with:
+          name: mochawesome-report
+          path: cypress/reports/mochareports
 
