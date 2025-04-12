@@ -4,20 +4,22 @@ on:
   pull_request
 
 jjobs:
-    cypress-test:
-        needs: test
+    test:
+        timeout-minutes: 60
         runs-on: ubuntu-latest
         steps:
             - name: Check out repository code
               uses: actions/checkout@v3
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
             - run: yarn install --frozen-lockfile
-
             - name: run cypress tests in chrome
-              uses: cypress-io/github-action@v5
+              uses: cypress-io/github-action@v6
               timeout-minutes: 10
               with:
                   browser: chrome
                   record: true
                   build: yarn build
-                  start: yarn start
+                  start: yarn cypress open
                   wait-on: 'http://localhost:3000'
