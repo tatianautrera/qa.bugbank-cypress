@@ -23,10 +23,13 @@ jobs:
       - name: Clean Reports Folder
         run: yarn clean:reports
 
-      - name: Start App and Run Cypress Tests with Mochawesome
-        run: |
-          yarn dev &
-          yarn cypress run --reporter mochawesome
+      - name: Run Cypress via GitHub Action with Mochawesome
+        uses: cypress-io/github-action@v6
+        with:
+          start: yarn dev
+          wait-on: 'http://localhost:3000'
+          browser: chrome
+          command: yarn cypress run --reporter mochawesome
 
       - name: Merge Mochawesome JSON Reports
         run: yarn combine-reports
