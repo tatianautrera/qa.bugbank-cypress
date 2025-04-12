@@ -4,22 +4,15 @@ on:
   pull_request
 
 jobs:
-    test:
-        timeout-minutes: 60
-        runs-on: ubuntu-latest
-        steps:
-            - name: Check out repository code
-              uses: actions/checkout@v3
-              uses: actions/setup-node@v3
-              with:
-                node-version: 18
-            - run: yarn install --frozen-lockfile
-            - name: run cypress tests in chrome
-              uses: cypress-io/github-action@v6
-              timeout-minutes: 10
-              with:
-                  browser: chrome
-                  record: true
-                  build: yarn build
-                  start: yarn cypress open
-                  wait-on: 'http://localhost:3000'
+  cypress-run:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - run: yarn install --frozen-lockfile
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          build: yarn dev
+          start: yarn cypress open
+          browser: chrome
