@@ -1,25 +1,40 @@
 name: Cypress Tests
 
-on: 
-  pull_request
+on:
+  pull_request:
+    branches: [main] # ou a branch que quiser monitorar
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
-      - run: yarn install --frozen-lockfile
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          build: yarn dev
-          start: yarn cypress run --reporter mochawesome
-          browser: chrome
-      - name: Upload Mochawesome Report
-        if: always() # Garante que o report será enviado mesmo se os testes falharem
+          node-version: 18
+
+      - name: Install Dependencies (Yarn)
+        run: yarn install --frozen-lockfile
+
+      - name: Clean and Prepare Report Folders
+        run: |
+          yarn clean:reports
+
+      - name: Run Cypress with Mochawesome
+        run: npx cypress run --reporter mochawesome
+
+      - name: Merge Mochawesome JSON Reports
+        run: yarn combine-reports
+
+      - name: Generate HTML Report from Mochawesome JSON
+        run: yarn generate-report
+
+      - name: Upload Mochawesome Report to GitHub Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
           path: cypress/reports/mochareports
-
