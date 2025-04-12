@@ -20,9 +20,6 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Clean Reports Folder
-        run: yarn clean:reports
-
       - name: Run Cypress via GitHub Action with Mochawesome
         uses: cypress-io/github-action@v6
         with:
