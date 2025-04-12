@@ -26,7 +26,12 @@ jobs:
 
       - name: Run Cypress with Mochawesome
         usos : cypress-io/github-action@v6
-        run: yarn cypress run --reporter mochawesome
+        with:
+          browser: chrome
+          record: true
+          build: yarn dev
+          start: yarn cypress run --reporter mochawesome
+          wait-on: 'http://localhost:3000'
 
       - name: Merge Mochawesome JSON Reports
         run: yarn combine-reports
