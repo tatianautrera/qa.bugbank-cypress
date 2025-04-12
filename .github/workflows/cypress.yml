@@ -3,6 +3,8 @@ name: Cypress Tests
 on:
   push:
   pull_request:
+   schedule:
+    - cron: '0 11 * * *'
 
 jobs:
   cypress-run:
@@ -27,12 +29,6 @@ jobs:
           wait-on: 'http://localhost:3000'
           browser: chrome
           command: yarn cypress run --reporter mochawesome
-
-      - name: Merge Mochawesome JSON Reports
-        run: yarn combine-reports
-
-      - name: Generate HTML Report from JSON
-        run: yarn generate-report
 
       - name: Upload Mochawesome Report
         uses: actions/upload-artifact@v4
