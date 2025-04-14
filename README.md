@@ -8,7 +8,7 @@ Corresponde a um projeto de automação de testes com o frameowrk Cypress, utili
 
 ## Estrutura
 
-O projeto de testes foi estruturado utilizando o design partner  Page Object, que consiste em separar o codigo de acordo com as telas do sistema de forma que facilite a reutilização do codigo evitando duplicações. O codigo ficou estrutura da seguinte forma:
+O projeto de testes foi estruturado utilizando o padrão Page Object, que consiste em separar o codigo de acordo com as telas do sistema de forma que facilite a reutilização do codigo evitando duplicações. O codigo ficou estrutura da seguinte forma:
 
 O codigo adicionado ficou na pasta cypress localizada na raz do projeto.
 
