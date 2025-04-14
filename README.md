@@ -8,16 +8,17 @@ Corresponde a um projeto de automação de testes com o frameowrk Cypress, utili
 
 ## Estrutura
 
-O projeto de testes foi estruturado utilizando o padrão Page Object, que consiste em separar o codigo de acordo com as telas do sistema de forma que facilite a reutilização do codigo evitando duplicações. O codigo ficou estrutura da seguinte forma:
+O projeto de testes foi estruturado utilizando o padrão Page Object, que consiste em separar o codigo de acordo com as telas do sistema, de forma que facilite a reutilização do codigo evitando duplicações. O codigo ficou estrutura da seguinte forma:
 
-O codigo adicionado ficou na pasta cypress localizada na raz do projeto.
+Pasta Cypress - O codigo adicionado ficou na pasta cypress localizada na raiz do projeto.
 
-Na pasta e2e são armazenados os arquivos de testes, que possuem a descrição dos casos de testes, chamadas das funções que realizam os passos no sistema e as chamadas das asserções para validar se o teste obteve o resultado esperado.
-Estas funções ficam armazenadas na pasta support/pages separadas pela pagina que ocorre a interação.
+Pasta e2e  - são armazenados os arquivos de testes, que possuem a descrição dos casos de testes, chamadas das funções que realizam os passos no sistema e as chamadas das asserções para validar se o teste obteve o resultado esperado.
+
+Pasta support/pages - Codigo de interação com as telas do sistema para a realização do passo a passo dos testes e suas respectivas asserções
 
 ## Baixando o projeto
 
-para baixar o projeto faça o clone desse repositório com o comando.
+Para baixar o projeto faça o clone desse repositório com o comando.
 
 ```bash
   git clone https://github.com/tatianautrera/qa.bugbank-cypress.git
@@ -49,5 +50,5 @@ Para rodar o projeto, acesse a pasta do projeto via terminal e execute o comando
 
 ## Pipeline
 O projeto foi integração com o github actions, atraves do workflow cypress.yml. A aplicação é executada todos os dias as 8:00 AM ou quando ocorrer algum pull request
-Foi configurado para rodar no navegador chrome e ao final da execução gerar um relatorio com os resultados da execução utlizando o mochawesome
+Foi configurado para rodar no navegador chrome e ao final da execução gerar um relatorio com os resultados da dos textos que foram execuados utlizando o mochawesome
 
