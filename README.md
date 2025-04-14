@@ -1,7 +1,5 @@
 <img src="/.github/assets/banner-bugbank.png" alt="BugBank - O banco com bugs e falhas do seu jeito" style="height: 300px; width:100%;"/>
 
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)  [![Netlify Status](https://api.netlify.com/api/v1/badges/32f537ef-2202-432e-9ff1-252fc87c490e/deploy-status)](https://app.netlify.com/sites/bugbank/deploys)
-
 # Objetivo
 
 Corresponde a um projeto de automação de testes com o frameowrk Cypress, utilizando o projeto [BugBank](https://github.com/jhonatasmatos/bugbank-ui)
@@ -45,10 +43,9 @@ Agora acesse no browser o endereço localhost:3000
 Para rodar o projeto, acesse a pasta do projeto via terminal e execute o comando:
 
 ```bash
-  yarn yarn cypress run
+  yarn cypress run
 ```
 
 ## Pipeline
 O projeto foi integração com o github actions, atraves do workflow cypress.yml. A aplicação é executada todos os dias as 8:00 AM ou quando ocorrer algum pull request
 Foi configurado para rodar no navegador chrome e ao final da execução gerar um relatorio com os resultados da dos textos que foram execuados utlizando o mochawesome
-
