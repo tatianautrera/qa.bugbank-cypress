@@ -4,7 +4,7 @@
 
 # Objetivo
 
-Corresponde a um prjeto de automação de testes com o frameowrk Cypress, utilizando o projeto [](https://github.com/jhonatasmatos/bugbank-ui)
+Corresponde a um projeto de automação de testes com o frameowrk Cypress, utilizando o projeto [BugBank](https://github.com/jhonatasmatos/bugbank-ui)
 
 ## Estrutura
 
