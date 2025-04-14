@@ -10,5 +10,9 @@ class HomePage{
     assertName(name){
         cy.get(el.name).should('contain.text', name)
     }
+
+    accessTransferPage(){
+        cy.get(el.btnTransfer).click()
+    }
 }
 export default new HomePage();

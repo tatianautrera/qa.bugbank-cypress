@@ -4,7 +4,6 @@ export const el = {
     inputPassword: '.card__register input[name="password"]',
     inputConfirmationPassword: '.card__register input[name="passwordConfirmation"]',
     btnSubmit:'.card__register button[type="submit"]',
-    messageSuccess: 'p[id=modalText]',
     addBalance: '#toggleAddBalance',
     errorInputEmail:'.card__register input[name="email"]~p',
     errorMessageByinputName: (name) => `.card__register input[name="${name}"]~p`,

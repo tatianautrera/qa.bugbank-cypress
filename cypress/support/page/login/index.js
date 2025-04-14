@@ -1,8 +1,9 @@
 /// <reference types="cypress" />
 
 const el = require('./elements').el;
+import  BasePage  from '../BasePage';
 
-class LoginPage{
+class LoginPage extends BasePage{
 
     accessRegisterUserPage(){
         cy.visit('/')

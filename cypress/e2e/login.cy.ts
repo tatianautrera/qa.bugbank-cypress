@@ -26,7 +26,7 @@ describe('Realziar Login', () => {
     it('CT06 - Quando solicito o login informando a senha incorreta, então o sistema deve retornar uma mensagem de erro informando que as credencias estão inválidas não permitindo seguir com o fluxo', () => {
       user.password = "12345"
       LoginPage.login(user)
-      RegisterUserPage.assertMessageAlert("Usuário ou senha inválido. Tente novamente ou verifique suas informações!")
+      LoginPage.assertMessageAlert("Usuário ou senha inválido. Tente novamente ou verifique suas informações!")
     })
   })
   describe('Dado que eu não possua cadastro no BugBank',()=>{
@@ -41,7 +41,7 @@ describe('Realziar Login', () => {
         withBalance: false
       }
       LoginPage.login(user)
-      RegisterUserPage.assertMessageAlert("Usuário ou senha inválido. Tente novamente ou verifique suas informações!")
+      LoginPage.assertMessageAlert("Usuário ou senha inválido. Tente novamente ou verifique suas informações!")
     })
   })
 })

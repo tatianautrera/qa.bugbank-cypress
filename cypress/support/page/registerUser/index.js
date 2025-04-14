@@ -3,8 +3,9 @@
 const el = require('./elements').el;
 import LoginPage from '../login'
 import HomePage from '../home'
+import  BasePage  from '../BasePage';
 
-class RegisterUserPage {
+class RegisterUserPage extends BasePage {
 
     registerUser(user) {
         cy.get(el.inputEmail).click({ force: true }).type(user.email)
@@ -14,19 +15,6 @@ class RegisterUserPage {
         if(user.withBalance)
             cy.get(el.addBalance).click({ force: true })
         cy.get(el.btnSubmit).click({ force: true })
-    }
-
-    assertMessageAlert(message) {
-        cy.get(el.messageSuccess).should('contain.text', message)
-    }
-
-    assertMessageAlert(message) {
-        cy.get(el.messageSuccess)
-            .invoke('text')
-            .then((text) => {
-                const cleanText = text.replace(/\s+/g, ' ').trim();
-                expect(cleanText).to.contain(message);
-            });
     }
 
     assertRegisterUserBalance(user, price) {
