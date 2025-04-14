@@ -1,0 +1,70 @@
+{
+  "invalidFields": [
+    {
+      "email": "teste",
+      "name": "nome teste",
+      "password": "1234",
+      "confirmationPassword":"1234",
+      "withBalance": true,
+      "message":"Formato inválido",
+      "field":"email"
+    },
+    {
+      "email": "teste@",
+      "name": "nome teste",
+      "password": "1234",
+      "confirmationPassword":"1234",
+      "withBalance": true,
+      "message":"Formato inválido",
+      "field":"email"
+    },
+    {
+      "email": "teste@teste.com",
+      "name": "nome teste",
+      "password": "1234",
+      "confirmationPassword":"12345",
+      "withBalance": true,
+      "message":"As senhas não são iguais.",
+      "field":"password"
+    }
+    
+  ],
+  "emptyRequiredFields":[
+    {
+      "email": "{enter}",
+      "name": "nome teste",
+      "password": "1234",
+      "confirmationPassword":"1234",
+      "withBalance": true,
+      "message":"É campo obrigatório",
+      "field":"email"
+    },
+    {
+      "email": "teste@teste.com",
+      "name": "nome teste",
+      "password": "{enter}",
+      "confirmationPassword":"1234",
+      "withBalance": true,
+      "message":"É campo obrigatório",
+      "field":"password"
+    },
+    {
+      "email": "teste@teste.com",
+      "name": "nome teste",
+      "password": "1234",
+      "confirmationPassword":"{enter}",
+      "withBalance": true,
+      "message":"É campo obrigatório",
+      "field":"passwordConfirmation"
+    },
+    {
+      "email": "teste@teste.com",
+      "name": "{enter}",
+      "password": "1234",
+      "confirmationPassword":"1234",
+      "withBalance": true,
+      "message":"Nome não pode ser vazio.",
+      "field":"name"
+    }
+  ]
+}
