@@ -14,6 +14,8 @@ Pasta e2e  - são armazenados os arquivos de testes, que possuem a descrição d
 
 Pasta support/pages - Codigo de interação com as telas do sistema para a realização do passo a passo dos testes e suas respectivas asserções
 
+Pasta documentacao - Nesta pagina foram anexados os cenarios de testes levantados e um relatorio com os bugs identificados durante o uso da aplicação
+
 ## Baixando o projeto
 
 Para baixar o projeto faça o clone desse repositório com o comando.
